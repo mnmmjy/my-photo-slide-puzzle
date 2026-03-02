@@ -328,7 +328,7 @@ function renderBoard() {
  * @returns {boolean} 移動可能ならtrue
  */
 function canMove(position) {
-    const totalTiles = gridSize;
+    const totalTiles = gridSize * gridSize;
     const emptyPos = board.indexOf(totalTiles - 1);
 
     // 位置を行・列に変換
