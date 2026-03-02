@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>フォト・スライドパズル</title>
+    <!-- Google fonts - 絵本風のフォント読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700;800&family=M+PULS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- 外部CSSの読み込み -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!--  タイトル  -->
+        <h1>フォトスライドパズル</h1>
+
+        <!-- 難易度選択 -->
+         <div id="difficultySelection" class="card difficulty-selection">
+            <div class="difficulty-title">パズルの難易度を選んでね</div>
+            <div class="difficulty-buttons">
+                <button class="btn-difficulty easy" data-size="3">かんたん<br><small>9マス</small></button>
+                <button class="btn-difficulty medium" data-size="4">ふつう<br><small>16マス</small></button>
+                <button class="btn-difficulty hard" data-size="5">むずかしい<br><small>25マス</small></button>
+            </div>
+         </div>
+
+         <!-- 画像アップロード -->
+          <div id="uploadSection" class="card hidden">
+            <label for="imageInput" class="upload-label">
+                写真をアップロード<br>
+                <small style="opacity: 0.7;">タップして画像を選択してね</small>
+            </label>
+            <input type="file" id="imageInput" accept="image/*">
+
+            <div id="previewContainer" class="preview-container hidden">
+                <img id="preview" src="" alt="Preview">
+                <button id="shuffleBtn" class="btn-shuffle">シャッフルして開始！</button>
+            </div>
+          </div>
+
+        <!-- ゲームセクション -->
+        <div id="gameSection" class="hidden">
+            <div class="game-container">
+                <!-- パズルエリア -->
+                <div class="pazzle-area">
+                    <!-- 統計表示 -->
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-label">手数</div>
+                            <div class="stat-value" id="moves">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">経過時間</div>
+                            <div class="stat-value" id="timer">0s</div>
+                        </div>
+                    </div>
+
+                    <!-- パズルボード -->
+                    <div id="pazzleBord"></div>
+                </div>
+
+                <!-- サイドパネル -->
+                <div class="side-panel">
+                    <!-- 見本画像 -->
+                    <div class="reference-card">
+                        <div class="reference-title">完成見本</div>
+                        <img id="referenceImage" src="" alt="完成見本">
+                     </div>
+
+                    <!-- 降参ボタン -->
+                    <button id="giveUpBtn" class="btn-give-up">降参する</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 成功オーバーレイ -->
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-content">
+            <div class="success-title">クリア！</div>
+            <div class="success-stats" id="successStats"></div>
+            <button id="replayBtn" class="btn-replay">もう一度遊ぶ</button>
+        </div>
+    </div>
+
+    <!-- 外部JavaScriptファイルの読み込み -->
+     <script src="script.js"></script>
+</body>
+</html>
