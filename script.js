@@ -194,9 +194,11 @@ function startGame() {
     // 解けパズルになるまでシャッフルを繰り返す
     // isSolved(): すでに完成していないか
     // isSolvable(): 解けるパズルか（数学的に必ず解ける配置か）
+    let attempts = 0;
     do {
         shuffleArray(board);
-    } while (isSolved() || !isSolvable());
+        attempts++;
+    } while ((isSolved() || !isSolvable()) && attempts < 1000);
 
     // 統計をリセット
     moves = 0;
