@@ -439,7 +439,7 @@ function showSuccess(isGiveUp = false) {
     // 統計情報を表示
     if (isGiveUp) {
         // 降参の場合
-        successStats.innerHTML = `降参しました...<br><strong>${moves}手</storong> / <strong>${elapsed}秒</strong>`;
+        successStats.innerHTML = `降参しました...<br><strong>${moves}手</strong> / <strong>${elapsed}秒</strong>`;
     } else {
         // クリアの場合
         successStats.innerHTML = `<strong>${moves}手</strong> / <strong>${elapsed}秒</strong>`;
